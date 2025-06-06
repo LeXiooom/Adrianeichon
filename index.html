@@ -1,0 +1,181 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Adri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color1: #ffe0e9;
+            --color2: #ffc2d1;
+            --color3: #ffb3c6;
+            --color4: #ff8fab;
+            --color5: #fb6f92;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, var(--color1), var(--color3));
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: var(--color5);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+        }
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .section-1 {
+            background-color: white;
+        }
+        .section-2 {
+            background-color: var(--color2);
+        }
+        .section-3 {
+            background-color: var(--color1);
+        }
+        h2 {
+            font-size: 2rem;
+            color: var(--color5);
+        }
+        p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+        .heart {
+            font-size: 3rem;
+            color: red;
+            animation: pulse 1s infinite;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin: 20px;
+            transition: transform 0.3s ease;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+        .button {
+            background-color: var(--color5);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ffb3c6;
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: var(--color5);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://cdn.pixabay.com/photo/2021/04/15/17/08/hearts-6180401_1280.png') repeat;
+            background-size: contain;
+            opacity: 0.07;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .typewriter {
+            font-family: 'Pacifico', cursive;
+            overflow: hidden;
+            border-right: .15em solid var(--color5);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .1em;
+            animation:
+              typing 4s steps(40, end),
+              blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--color5); }
+        }
+    </style>
+    <script>
+        function showMessage() {
+            alert("Te amo hasta el infinito y más allá, cachetitos ❤️");
+        }
+    </script>
+</head>
+<body>
+    <div class="stars"></div>
+    <header>
+        Para Adri 💖
+    </header>
+
+    <section class="section-1">
+        <h2 class="typewriter">Hola, Ojitos Lindos</h2>
+        <p>
+            Estoy aprendiendo a conocerte poco a poco cada vez más, me encanta verte los ojitos, hablar contigo, entrenar contigo y de verdad me tienes como enamorado. Si supieras todas las cosas que quiero contigo, sería algo muy brutal.
+        </p>
+        <div class="heart">❤️❤️❤️</div>
+        <button class="button" onclick="showMessage()">Haz clic aquí</button>
+    </section>
+
+    <section class="section-2">
+        <h2>Nuestros momentos</h2>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/300x200?text=Tu+foto+aqu%C3%AD" alt="foto 1">
+            <img src="https://via.placeholder.com/300x200?text=Otro+recuerdo" alt="foto 2">
+        </div>
+    </section>
+
+    <section class="section-3">
+        <h2>Lo que siento por ti</h2>
+        <p>
+            Tal vez no soy perfecto, pero lo que siento por ti es real. Cada vez que pienso en ti, sonrío como bobo. Gracias por existir, Adri. 💘
+        </p>
+    </section>
+
+    <footer>
+        Hecho con 💕 por Aarom - 2025
+    </footer>
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio HTML5.
+    </audio>
+</body>
+</html>
