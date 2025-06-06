@@ -238,6 +238,21 @@
             Shhh... El secreto es que te amo. 💫💕
         </p>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Activar botón de ver secreto
+            document.getElementById("secret-button").addEventListener("click", function () {
+                const msg = document.getElementById("secret-message");
+                msg.style.display = "block";
+                msg.style.opacity = 0;
+                let opacity = 0;
+                const fade = setInterval(() => {
+                    opacity += 0.05;
+                    msg.style.opacity = opacity;
+                    if (opacity >= 1) clearInterval(fade);
+                }, 50);
+            });
     
     <footer>
         Hecho con 💕 por Aarom - LeXiom - 2025
