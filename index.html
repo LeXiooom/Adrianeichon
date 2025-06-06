@@ -159,6 +159,20 @@
             padding: 15px;
             font-size: 0.9rem;
         }
+        .floating-heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff3366;
+            transform: rotate(45deg);
+            animation: floatUp 4s linear infinite;
+            opacity: 0.8;
+            border-radius: 0 50% 50% 50%;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(45deg); opacity: 0.8; }
+            100% { transform: translateY(-600px) rotate(45deg); opacity: 0; }
+        }
     </style>
     <script>
         function showMessage() {
@@ -212,10 +226,19 @@
     <section class="section-1">
         <h2>Una cartita para ti 💌</h2>
         <div class="letter">
-            Desde que te conocí, todo cambió para bien. Tu risa, tus gestos, tus ojitos... me tienen atrapado. Solo quiero hacerte feliz, que sonrías siempre, y que sepas que puedes contar conmigo para todo. Gracias por existir, por dejarme conocerte y por darme la oportunidad de compartir contigo momentos tan bonitos. 💖
+           Tu risa, tus gestos, tus ojitos... me tienen atrapado. Solo quiero hacerte feliz, que sonrías siempre, y que sepas que puedes contar conmigo para todo. Gracias por dejarme conocerte y por darme la oportunidad de compartir contigo momentos tan bonitos. 💖
         </div>
     </section>
 
+    <section class="section-2">
+        <h2>¿Quieres saber un secreto?</h2>
+        <p>Haz clic en el botón de abajo</p>
+        <button class="button" onclick="showSecret()">Ver secreto</button>
+        <p id="secret-message" style="display:none; font-size:1.3rem; margin-top:20px; color:var(--color5); font-weight:bold;">
+            Shhh... El secreto es que te amo. 💫💕
+        </p>
+    </section>
+    
     <footer>
         Hecho con 💕 por Aarom - LeXiom - 2025
     </footer>
