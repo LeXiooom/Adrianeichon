@@ -253,6 +253,18 @@
                     if (opacity >= 1) clearInterval(fade);
                 }, 50);
             });
+
+            // Corazones flotantes
+            setInterval(() => {
+                const heart = document.createElement("div");
+                heart.classList.add("floating-heart");
+                heart.style.left = Math.random() * window.innerWidth + "px";
+                heart.style.top = "100%";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 4000);
+            }, 500);
+        });
+    </script>
     
     <footer>
         Hecho con 💕 por Aarom - LeXiom - 2025
