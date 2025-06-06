@@ -7,12 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color1: #fff0f5;
-            --color2: #ffccd5;
-            --color3: #fda4ba;
-            --color4: #ff6f91;
-            --color5: #ff3366;
-            --gold: #f9d342;
+            --color1: #ffe0e9;
+            --color2: #ffc2d1;
+            --color3: #ffb3c6;
+            --color4: #ff8fab;
+            --color5: #fb6f92;
         }
         * {
             box-sizing: border-box;
@@ -230,44 +229,8 @@
         </div>
     </section>
 
-    <section class="section-2">
-        <h2>¿Quieres saber un secreto?</h2>
-        <p>Haz clic en el botón de abajo</p>
-        <button class="button" onclick="showSecret()">Ver secreto</button>
-        <p id="secret-message" style="display:none; font-size:1.3rem; margin-top:20px; color:var(--color5); font-weight:bold;">
-            Shhh... El secreto es que te amo. 💫💕
-        </p>
-    </section>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Activar botón de ver secreto
-            document.getElementById("secret-button").addEventListener("click", function () {
-                const msg = document.getElementById("secret-message");
-                msg.style.display = "block";
-                msg.style.opacity = 0;
-                let opacity = 0;
-                const fade = setInterval(() => {
-                    opacity += 0.05;
-                    msg.style.opacity = opacity;
-                    if (opacity >= 1) clearInterval(fade);
-                }, 50);
-            });
-
-            // Corazones flotantes
-            setInterval(() => {
-                const heart = document.createElement("div");
-                heart.classList.add("floating-heart");
-                heart.style.left = Math.random() * window.innerWidth + "px";
-                heart.style.top = "100%";
-                document.body.appendChild(heart);
-                setTimeout(() => heart.remove(), 4000);
-            }, 500);
-        });
-    </script>
-    
     <footer>
-        Hecho con 💕 por Aarom - LeXiom - 2025
+        Hecho con 💕 por Aarom - LeXiom - MMXXV
     </footer>
 
     <audio autoplay loop>
