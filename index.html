@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color1: #ffe0e9;
-            --color2: #ffc2d1;
-            --color3: #ffb3c6;
-            --color4: #ff8fab;
-            --color5: #fb6f92;
+            --color1: #fff0f5;
+            --color2: #ffccd5;
+            --color3: #fda4ba;
+            --color4: #ff6f91;
+            --color5: #ff3366;
+            --gold: #f9d342;
         }
         * {
             box-sizing: border-box;
@@ -30,34 +31,39 @@
             padding: 20px;
             text-align: center;
             font-family: 'Pacifico', cursive;
-            font-size: 2.5rem;
+            font-size: 2.7rem;
+            animation: fadeIn 2s ease;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
         section {
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
         }
-        .section-1 {
-            background-color: white;
-        }
-        .section-2 {
-            background-color: var(--color2);
-        }
-        .section-3 {
-            background-color: var(--color1);
-        }
+        .section-1 { background-color: white; }
+        .section-2 { background-color: var(--color2); }
+        .section-3 { background-color: var(--color1); }
         h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--color5);
         }
         p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 20px auto;
+            color: #333;
         }
         .heart {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: red;
             animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
         .image-container {
             display: flex;
@@ -65,36 +71,47 @@
             flex-wrap: wrap;
         }
         .image-container img {
-            max-width: 300px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-width: 280px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             margin: 20px;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
         .image-container img:hover {
-            transform: scale(1.05);
+            transform: scale(1.07);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
         .button {
             background-color: var(--color5);
             color: white;
-            padding: 12px 25px;
+            padding: 14px 30px;
             border: none;
-            border-radius: 25px;
+            border-radius: 30px;
             font-size: 1.1rem;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 25px;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .button:hover {
-            background-color: #ffb3c6;
-            transform: scale(1.05);
+            background-color: var(--color4);
+            transform: scale(1.1);
         }
-        footer {
-            background-color: var(--color5);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9rem;
+        .typewriter {
+            font-family: 'Pacifico', cursive;
+            overflow: hidden;
+            border-right: .15em solid var(--color5);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .1em;
+            animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--color5); }
         }
         .stars {
             position: fixed;
@@ -105,33 +122,42 @@
             z-index: -1;
             background: url('https://cdn.pixabay.com/photo/2021/04/15/17/08/hearts-6180401_1280.png') repeat;
             background-size: contain;
-            opacity: 0.07;
+            opacity: 0.06;
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-        .typewriter {
+        .quote {
             font-family: 'Pacifico', cursive;
-            overflow: hidden;
-            border-right: .15em solid var(--color5);
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .1em;
-            animation:
-              typing 4s steps(40, end),
-              blink-caret .75s step-end infinite;
+            color: var(--color5);
+            font-size: 1.8rem;
+            margin-top: 40px;
+            animation: fadeIn 3s ease-in;
         }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+        .letter {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+            position: relative;
+            animation: fadeIn 3s ease-in-out;
         }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--color5); }
+        .letter::before {
+            content: "\2764";
+            font-size: 2rem;
+            color: var(--color5);
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+        footer {
+            background-color: var(--color5);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
         }
     </style>
     <script>
@@ -156,7 +182,7 @@
     </section>
 
     <section class="section-2">
-        <h2>Me gustas mucho, muchisimos con demasiado.</h2>
+        <h2>Me gustas mucho, muchísimos con demasiado.</h2>
         <p>
             Te amo ojitos hermosos y brillantes por la luz traspasadora de paredes brutalmente.
         </p>
@@ -170,17 +196,30 @@
     </section>
 
     <section class="section-2">
-    <h2>Nuestros momentos</h2>
-    <div class="image-container">
-        <img src="https://i.imgur.com/7rQSDuvh.jpg" alt="Entrenando">
-        <img src="https://i.imgur.com/a68Wo5Kh.jpg" alt="Patinando">
-        <img src="https://i.imgur.com/zaY9N85h.jpg" alt="Salida">
-    </div>
+        <h2>Nuestros momentos</h2>
+        <div class="image-container">
+            <img src="https://i.imgur.com/7rQSDuvh.jpg" alt="Entrenando">
+            <img src="https://i.imgur.com/a68Wo5Kh.jpg" alt="Patinando">
+            <img src="https://i.imgur.com/zaY9N85h.jpg" alt="Salida">
+        </div>
+    </section>
+
+    <section class="section-3">
+        <h2>Para siempre...</h2>
+        <p class="quote">Eres mi razón para creer que lo más bonito aún existe. ✨</p>
+    </section>
+
+    <section class="section-1">
+        <h2>Una cartita para ti 💌</h2>
+        <div class="letter">
+            Desde que te conocí, todo cambió para bien. Tu risa, tus gestos, tus ojitos... me tienen atrapado. Solo quiero hacerte feliz, que sonrías siempre, y que sepas que puedes contar conmigo para todo. Gracias por existir, por dejarme conocerte y por darme la oportunidad de compartir contigo momentos tan bonitos. 💖
+        </div>
     </section>
 
     <footer>
         Hecho con 💕 por Aarom - LeXiom - 2025
     </footer>
+
     <audio autoplay loop>
         <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
         Tu navegador no soporta el audio HTML5.
