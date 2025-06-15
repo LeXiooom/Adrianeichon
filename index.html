@@ -1,135 +1,241 @@
 <!DOCTYPE html>
-<html lang="es" class="transition duration-300">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nuestros Recuerdos 💖</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Quicksand', sans-serif; }
-    .dark body { background-color: #1f2937; }
-    .animate-fade-in { animation: fadeIn 0.3s ease-out; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Adri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color1: #ffe0e9;
+            --color2: #ffc2d1;
+            --color3: #ffb3c6;
+            --color4: #ff8fab;
+            --color5: #fb6f92;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, var(--color1), var(--color3));
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: var(--color5);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            font-size: 2.7rem;
+            animation: fadeIn 2s ease;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .section-1 { background-color: white; }
+        .section-2 { background-color: var(--color2); }
+        .section-3 { background-color: var(--color1); }
+        h2 {
+            font-size: 2.2rem;
+            color: var(--color5);
+        }
+        p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 20px auto;
+            color: #333;
+        }
+        .heart {
+            font-size: 3.5rem;
+            color: red;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            max-width: 280px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin: 20px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .image-container img:hover {
+            transform: scale(1.07);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .button {
+            background-color: var(--color5);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: var(--color4);
+            transform: scale(1.1);
+        }
+        .typewriter {
+            font-family: 'Pacifico', cursive;
+            overflow: hidden;
+            border-right: .15em solid var(--color5);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .1em;
+            animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--color5); }
+        }
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://cdn.pixabay.com/photo/2021/04/15/17/08/hearts-6180401_1280.png') repeat;
+            background-size: contain;
+            opacity: 0.06;
+        }
+        .quote {
+            font-family: 'Pacifico', cursive;
+            color: var(--color5);
+            font-size: 1.8rem;
+            margin-top: 40px;
+            animation: fadeIn 3s ease-in;
+        }
+        .letter {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+            position: relative;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .letter::before {
+            content: "\2764";
+            font-size: 2rem;
+            color: var(--color5);
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+        footer {
+            background-color: var(--color5);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+        .floating-heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff3366;
+            transform: rotate(45deg);
+            animation: floatUp 4s linear infinite;
+            opacity: 0.8;
+            border-radius: 0 50% 50% 50%;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(45deg); opacity: 0.8; }
+            100% { transform: translateY(-600px) rotate(45deg); opacity: 0; }
+        }
+    </style>
+    <script>
+        function showMessage() {
+            alert("Te amo hasta el infinito y más allá a pasitos de tortuga con las patas quebradas, cachetitos ❤️");
+        }
+    </script>
 </head>
-<body class="bg-pink-50 dark:bg-gray-900 text-gray-800 dark:text-pink-100 transition duration-300">
+<body>
+    <div class="stars"></div>
+    <header>
+        Para Adri 💖
+    </header>
 
-  <!-- Encabezado -->
-  <header class="text-center py-8 bg-pink-300 dark:bg-gray-800 rounded-b-3xl shadow-md relative">
-    <h1 class="text-4xl font-bold text-white drop-shadow-md">💖 Nuestros Recuerdos</h1>
-    <p class="text-pink-100 text-lg mt-2">Un diario visual de todo lo bonito que hemos vivido</p>
-    <div class="absolute right-6 bottom-4 flex items-center gap-2">
-      <button onclick="openModal()" class="bg-white text-pink-600 font-semibold px-4 py-2 rounded-full shadow-md hover:bg-pink-100 transition">+ Recuerdo</button>
-      <button onclick="toggleMode()" class="bg-pink-100 dark:bg-gray-700 text-gray-800 dark:text-white rounded-full p-2 shadow hover:scale-105 transition">🌙</button>
-    </div>
-  </header>
+    <section class="section-1">
+        <h2 class="typewriter">Hola, Ojitos Lindos</h2>
+        <p>
+            Estoy aprendiendo a conocerte poco a poco cada vez más, me encanta verte los ojitos, hablar contigo, entrenar contigo y de verdad me tienes como enamorado. Si supieras todas las cosas que quiero contigo, sería algo muy brutal.
+        </p>
+        <div class="heart">❤️❤️❤️</div>
+        <button class="button" onclick="showMessage()">Haz clic aquí</button>
+    </section>
 
-  <!-- Recuerdos -->
-  <main id="memoryGrid" class="p-4 md:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <!-- Recuerdos iniciales -->
-  </main>
+    <section class="section-2">
+        <h2>Me gustas mucho, muchísimos con demasiado.</h2>
+        <p>
+            Te amo ojitos hermosos y brillantes por la luz traspasadora de paredes brutalmente.
+        </p>
+    </section>
 
-  <!-- Pie de página -->
-  <footer class="text-center mt-10 p-6 bg-pink-200 dark:bg-gray-800 rounded-t-3xl shadow-inner">
-    <p class="text-pink-800 dark:text-pink-200 text-sm">Gracias por vivir esto conmigo, Adri. Cada momento contigo es único 💞</p>
-    <p class="text-pink-700 dark:text-pink-300 text-xs mt-1">— Tu compae que te ama 😘</p>
-  </footer>
+    <section class="section-3">
+        <h2>Lo que siento por ti</h2>
+        <p>
+            Tal vez no soy perfecto, pero lo que siento por ti es real. Cada vez que pienso en ti, sonrío como bobo. 💘
+        </p>
+    </section>
 
-  <!-- Modal -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center hidden z-50">
-    <div class="bg-white dark:bg-gray-900 rounded-3xl p-6 w-full max-w-md shadow-xl animate-fade-in text-gray-800 dark:text-white">
-      <h2 class="text-2xl font-bold text-pink-600 dark:text-pink-300 mb-4 text-center">Nuevo Recuerdo 💌</h2>
-      <form id="memoryForm" class="space-y-4">
-        <input id="titleInput" type="text" placeholder="Título del recuerdo" class="w-full border border-pink-300 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-xl p-2" required>
-        <input id="dateInput" type="date" class="w-full border border-pink-300 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-xl p-2" required>
-        <input id="imageInput" type="file" accept="image/*" class="w-full border border-pink-300 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-xl p-2">
-        <textarea id="descInput" placeholder="Descripción del momento" class="w-full border border-pink-300 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-xl p-2" rows="3" required></textarea>
-        <div class="flex justify-end gap-2 pt-2">
-          <button type="button" onclick="closeModal()" class="px-4 py-2 rounded-xl bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-400 dark:hover:bg-gray-600">Cancelar</button>
-          <button type="submit" class="px-4 py-2 rounded-xl bg-pink-500 text-white hover:bg-pink-600">Guardar</button>
+    <section class="section-2">
+        <h2>Nuestros momentos</h2>
+        <div class="image-container">
+            <img src="https://i.imgur.com/7rQSDuvh.jpg" alt="Entrenando">
+            <img src="https://i.imgur.com/a68Wo5Kh.jpg" alt="Patinando">
+            <img src="https://i.imgur.com/zaY9N85h.jpg" alt="Salida">
         </div>
-      </form>
-    </div>
-  </div>
+    </section>
 
-  <script>
-    const memoryGrid = document.getElementById("memoryGrid");
-    const modal = document.getElementById("modal");
-    const form = document.getElementById("memoryForm");
+    <section class="section-3">
+        <h2>Para siempre...</h2>
+        <p class="quote">Eres mi razón para creer que lo más bonito aún existe. ✨</p>
+    </section>
 
-    function openModal() {
-      modal.classList.remove("hidden");
-    }
-    function closeModal() {
-      modal.classList.add("hidden");
-      form.reset();
-    }
+    <section class="section-1">
+        <h2>Una cartita para ti 💌</h2>
+        <div class="letter">
+           Tu risa, tus gestos, tus ojitos... me tienen atrapado. Solo quiero hacerte feliz, que sonrías siempre, y que sepas que puedes contar conmigo para todo. Gracias por dejarme conocerte y por darme la oportunidad de compartir contigo momentos tan bonitos. 💖
+        </div>
+    </section>
 
-    function toggleMode() {
-      const html = document.documentElement;
-      html.classList.toggle('dark');
-      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    }
+    <footer>
+        Hecho con 💕 por Aarom - LeXiom - MMXXV
+    </footer>
 
-    function loadTheme() {
-      if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
-    }
-
-    function loadMemories() {
-      const memories = JSON.parse(localStorage.getItem("memories")) || [];
-      memoryGrid.innerHTML = "";
-      memories.forEach(mem => {
-        const card = `
-          <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-            <img src="${mem.image}" alt="recuerdo" class="w-full h-64 object-cover">
-            <div class="p-4">
-              <h2 class="text-xl font-semibold text-pink-600 dark:text-pink-400">${mem.title}</h2>
-              <p class="text-xs text-gray-400 dark:text-gray-500 mb-1">${mem.date}</p>
-              <p class="text-sm text-gray-500 dark:text-gray-300 mt-1">${mem.description}</p>
-            </div>
-          </div>`;
-        memoryGrid.innerHTML += card;
-      });
-    }
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const title = document.getElementById("titleInput").value;
-      const date = document.getElementById("dateInput").value;
-      const desc = document.getElementById("descInput").value;
-      const imageFile = document.getElementById("imageInput").files[0];
-
-      let image = "https://via.placeholder.com/400x300.png?text=Recuerdo"; // default
-      if (imageFile) {
-        image = await toBase64(imageFile);
-      }
-
-      const newMemory = { title, date, description: desc, image };
-      const memories = JSON.parse(localStorage.getItem("memories")) || [];
-      memories.unshift(newMemory);
-      localStorage.setItem("memories", JSON.stringify(memories));
-      loadMemories();
-      closeModal();
-    });
-
-    const toBase64 = file => new Promise((res, rej) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => res(reader.result);
-      reader.onerror = error => rej(error);
-    });
-
-    window.onload = () => {
-      loadTheme();
-      loadMemories();
-    }
-  </script>
-
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio HTML5.
+    </audio>
 </body>
 </html>
